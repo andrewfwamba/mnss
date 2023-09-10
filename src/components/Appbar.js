@@ -85,7 +85,7 @@ function Appbar() {
         </div>
       </nav>
       {open && (
-        <div className="top-[4rem] fixed uppercase w-full bg-green-600">
+        <div className="top-[4rem] md:hidden fixed z-10 uppercase w-full bg-green-600">
           <ul className="flex px-10 flex-col mt-5 w-full text-gray-200 font-[500]">
             {Menus.map((menu, index) => (
               <li
