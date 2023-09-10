@@ -28,7 +28,7 @@ function Home() {
       src: shisia,
     },
     {
-      name: "Mrs. Bilha Joyce.County",
+      name: "Mrs. Bilha Joyce",
       title: "Vihiga,",
       agenda: "Mental health and wellness for socioeconomic transformation",
       src: bilha,
