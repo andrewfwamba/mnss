@@ -258,7 +258,7 @@ function Home() {
       </div>
 
       {/* The organizer */}
-      <div id="orgs" className="bg-blue-700 p-10">
+      <div id="orgs" className="bg-blue-700 p-3 md:p-10">
         <div className="flex flex-col justify-center items-center">
           <img
             src={require("../assets/images/mulembeagenda.png")}
@@ -367,11 +367,16 @@ function Home() {
 
       {/* Why register for the summit */}
       <div className="py-10 px-5 md:px-24 bg-blue-700/30">
-        <p className="text-green-800 text-center text-[25px]">
+        <div className="flex my-6 space-x-2">
+          <p className="bg-amber-400 h-5 w-5 rounded-full"></p>
+          <p className="bg-green-600 h-5 w-5 rounded-full"></p>
+          <p className="bg-red-700 h-5 w-5 rounded-full"></p>
+        </div>
+        <p className="text-green-800 text-center text-[18px] font-medium md:font-light md:text-[25px] my-2">
           Why should you register for the Inaugural Mulembe Nation SocioEconomic
           Summit?
         </p>
-        <p className="text-center">
+        <p className="text-center text-[15px]">
           COVID-19 has shaken up the business world, and Kenya is no exception.
           But amidst the chaos, there's a silver lining: the rise of business
           ecosystems. In the wake of the COVID-19 pandemic, it has become
