@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Appbar from "../components/Appbar";
 import { BsCalendarEvent, BsGraphUp } from "react-icons/bs";
 import { SiSololearn } from "react-icons/si";
@@ -12,59 +12,129 @@ import bilha from "../assets/images/MrsBilha.jpg";
 import Kentice from "../assets/images/Kentice.jpg";
 import wachana from "../assets/images/Kalistus.jpg";
 import wafukho from "../assets/images/ErickWafukho.jpg";
+import paul from "../assets/images/Paulmakokha.jpg";
+import luke from "../assets/images/Luke.jpg";
+
+const CountdownTimer = ({ deadline }) => {
+  const calculateTimeRemaining = () => {
+    const currentTime = new Date();
+    const timeDifference = deadline - currentTime;
+
+    const daysRemaining = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hoursRemaining = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutesRemaining = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const secondsRemaining = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    return {
+      daysRemaining,
+      hoursRemaining,
+      minutesRemaining,
+      secondsRemaining,
+    };
+  };
+
+  const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeRemaining(calculateTimeRemaining());
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div>
+      <h1 className="font-[500] text-[15px] md:text-[18px]">
+        Days to Registration Close
+      </h1>
+      <div className="text-[12px]">
+        <span>{timeRemaining.daysRemaining} Days</span>
+        <span>- {timeRemaining.hoursRemaining} Hours</span>
+        <span>- {timeRemaining.minutesRemaining} Mins</span>
+        <span>- {timeRemaining.secondsRemaining} Secs</span>
+      </div>
+    </div>
+  );
+};
 
 function Home() {
+  // Set deadline date here (year, month - 1, day, hours, minutes, seconds)
+  const deadline = new Date(2023, 10, 25, 23, 59, 59);
   const speakers = [
     {
       name: "Dr. Sylvester Anami",
-      title: "Lead Coordinator,",
-      agenda: "Mulembe Nation Socioeconomic theory of Change",
+      title: "",
+      agenda: "Mulembe Nation Socioeconomic transformation Theory of Change",
       src: sylvester,
     },
     {
       name: "Mrs Julia Shisia",
-      title: "Busia,",
+      title: "County: Busia",
       agenda: "Demystifying insurance in Risk mitigation",
       src: shisia,
     },
     {
       name: "Mrs. Bilha Joyce",
-      title: "Vihiga,",
-      agenda: "Mental health and wellness for socioeconomic transformation",
+      title: "County: Vihiga",
+      agenda: "Mental health and wellbeing",
       src: bilha,
     },
     {
       name: "Kentice Tikolo",
-      title: "Kakamega,",
+      title: "County: Kakamega",
       agenda: "Nurturing sports for business.",
       src: Kentice,
     },
     {
       name: "Mr. Calistus Wachana",
-      title: "Bungoma,",
+      title: "County: Bungoma",
       agenda:
-        "Climate as a forgotten factor of production: How can we harness government climate change initiatives to eradicate poverty",
+        "Climate as a forgotten factor of production:  Harnessing government change initiatives to eradicate poverty",
       src: wachana,
     },
     {
       name: "Mr. Erick Wafukho.",
-      title: "Trans-Nzioa,",
+      title: "County: Trans-Nzoia",
       agenda: "Strategic Mulembe Community Collaborations",
       src: wafukho,
+    },
+    {
+      name: "Mr. Paul Makokha.",
+      title: "County: Kakamega",
+      agenda: "Business and the Law",
+      src: paul,
+    },
+    {
+      name: "Mr. Luke Shikanga.",
+      title: "County: Kakamega",
+      agenda: "Culture as an economic asset",
+      src: luke,
     },
   ];
   return (
     <div className="mt-[5rem] md:mt-1">
       <Appbar />
+      <div className="bg-white/90 border z-10 border-amber-400 rounded p-1 md:p-5 fixed text-green-900 shadow-xl right-5 top-[5rem] ">
+        <p>
+          <CountdownTimer deadline={deadline} />
+        </p>
+      </div>
       <div className="bg-[url('https://unsplash.com/photos/OKLqGsCT8qs/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjAzNjIzfA&force=true&w=1920')] mt-10">
         <div className="bg-white/90 px-2 md:px-36 py-4">
           <div className="mt-10 md:mt-[15%] flex  space-x-6">
             <img
               src={require("../assets/images/mulembelogo.jpg")}
               alt=""
-              className="rounded-lg h-[5rem]  md:h-auto md:w-auto shadow-md"
+              className="rounded-lg h-[10rem]  md:h-[13rem] md:w-auto shadow-md"
             />
-            <div className="text-base md:text-[30px] font-[500] flex flex-col justify-center items-start text-green-900">
+            {/* <div className="text-base md:text-[30px] font-[500] flex flex-col justify-center items-start text-green-900">
               <p>
                 <span className="font-bold text-35 text-orange-500">M</span>
                 ulembe
@@ -79,7 +149,7 @@ function Home() {
               <p>
                 <span className="font-bold text-35 text-green-500">S</span>ummit
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="mt-8 text-green-700 text-[15px] md:text-[20px]">
             <p>
@@ -118,7 +188,7 @@ function Home() {
       </div>
 
       <div className="grid md:grid-cols-3 gap-4 px-2 py-2 md:py-8 md:px-16">
-        <div className="bg-red-500 rounded shadow-xl shadow-red-500/40 p-8 text-gray-100">
+        <div className="bg-orange-500 rounded shadow-xl shadow-red-500/40 p-8 text-gray-100">
           <div className="flex space-x-5">
             <BsCalendarEvent className="text-white text-xl" />
             <div>
@@ -126,19 +196,19 @@ function Home() {
               <p>November, 2023</p>
             </div>
           </div>
-          <div className="flex space-x-5 mt-6">
+          {/* <div className="flex space-x-5 mt-6">
             <SiSololearn />
             <p className="text-[12px]">
-              Venue. Masinde Muliru University of agriculture and Technology
-            </p>
-          </div>
-          {/* <div className="flex my-6 space-x-5">
-            <SiSololearn />
-            <p className="text-[12px]">
-              Sarova Imperial , Kisumu Award, Black Tie, Red Carpet Dinner //
-              7pm till late
+              Venue. Masinde Muliro University of agriculture and Technology
             </p>
           </div> */}
+          <div className="flex my-6 space-x-5">
+            <SiSololearn />
+            <p className="text-[15px]">
+              Masinde Muliro University of Science and Technology Summit
+              discussions, Exhibitions, and Luncheon 8am to 5 pm
+            </p>
+          </div>
         </div>
         {/* Grid section 2 */}
         <div className="bg-green-500 rounded shadow-xl shadow-green-500/40 p-8 text-gray-100">
@@ -164,7 +234,7 @@ function Home() {
 
         {/* Grid section 3 */}
 
-        <div className="bg-amber-500 rounded shadow-xl shadow-amber-500/40 p-8 text-gray-100">
+        <div className="bg-teal-500 rounded shadow-xl shadow-teal-500/40 p-8 text-gray-100">
           <div className="flex space-x-5">
             <div>
               <p className="text-gray-100 text-[30px] border-b border-l rounded shadow-2xl border-green-300 px-2">
@@ -172,23 +242,28 @@ function Home() {
               </p>
             </div>
           </div>
-          <div className="flex mt-5 space-x-5">
-            <SiSololearn />
-            <p className="text-[12px]">
-              Ciala Resort, Kisumu Summit discussions and Exhibitions // 9am –
-              5pm
-            </p>
+          <div className="flex mt-5 justify-between py-5 items-center space-x-5">
+            <div>
+              <p className="text-white text-[12px] mb-4">LUBAO FM</p>
+              <img
+                src={require("../assets/images/lubaologo.jpeg")}
+                alt=""
+                className="rounded-full h-[3rem] w-auto shadow-md"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="bg-blue-700 px-5 mt-5 py-10 md:px-16 md:py-20 flex justify-center items-center">
-        <p className="text-center text-gray-200">
-          The first Mulembe Nation SocioEconomic Summit brings together multiple
-          players within the business environment to achieve collective growth
-          and advancement of the community. The summit aims to help Kenyan
-          businesses accelerate and learn from each other, while charting a
-          collaborative course towards growth.
+        <p className="text-center text-[13px] md:text-[15px] text-gray-200">
+          The first-ever Mulembe Nation Socioeconomic Summit unites the Mulembe
+          populace from the 5 Counties, encompassing both urban and rural
+          dwellers as well as those residing abroad, in order to attain a shared
+          socioeconomic transformation of the community. The primary objective
+          of the Summit is to foster mutual learning on investments and business
+          prospects among the participants, all while engaging in a constructive
+          dialogue pertaining to economic expansion and prosperity.
         </p>
       </div>
       {/* Speakers section */}
@@ -221,7 +296,7 @@ function Home() {
       </div>
 
       {/* Opportunities */}
-      <div id="opps" className="py-10 bg-blue-700/30">
+      <div id="opps" className="py-10 bg-green-500/30">
         <div className="flex flex-col justify-center items-center">
           <img
             src={require("../assets/images/mulembeagenda.png")}
@@ -258,29 +333,76 @@ function Home() {
       </div>
 
       {/* The organizer */}
-      <div id="orgs" className="bg-blue-700 p-3 md:p-10">
+      <div id="orgs" className="bg-amber-700 p-2 md:py-10 md:px-[8rem]">
         <div className="flex flex-col justify-center items-center">
           <img
             src={require("../assets/images/mulembeagenda.png")}
             alt=""
             className="rounded-full h-[5rem] w-auto mt-5"
           />
-          <p id="opps" className="text-gray-200 my-4 font-bold text-[30px]">
+          <p id="" className="text-gray-200 my-4 font-bold text-[30px]">
             The Organizer
           </p>
-          <p className="text-gray-200 text-[16px] text-center">
-            The IMC People Ltd is an award-winning Kenyan PR agency with the aim
-            of redefining Public Relations in Africa through the lenses of
-            incorporative PR and Marketing elements into one philosophy referred
-            to as Integrated Marketing and Communications. This dream has
-            remained a driving force in the growth of the company and has seen
-            it develop a global footprint. The IMC People Ltd are ready and
-            already championing activities that align with the current
-            disruptions in the world like offering trainings and drafting
-            strategies on sustainable investing; casing points Environmental
-            Social Governance and Socially Responsible Investing which ensure
-            your company is noticed by investors.
+          <p className="text-gray-200 text-[15px] text-center">
+            Mulembe Nation Agenda LTD is a fully registered socioeconomic
+            transformation public entity committed to developing a strong
+            feeling of community and achieving socioeconomic transformation. It
+            promotes activities that are aligned with empowering people to move
+            out of significant poverty through entrepreneurship training,
+            cultural spectaculars, enhancing sustainable agricultural efficiency
+            through the incorporation of modern technologies, digital extension
+            services, and value addition to native commodities, promoting
+            tourism in the region, and transforming health outcomes by
+            facilitating the coordination and harmonization of traditional
+            practices. It engages in vigorous efforts to address the challenges
+            of climate change and implement strategies to adapt and mitigate its
+            impact. Moreover, it facilitates the connection between businesses
+            in the Mulembe Nation and potential investors, offering them the
+            chance to network and establish benchmarks for success.
           </p>
+        </div>
+        <div className="text-gray-100 text-center">
+          <p id="" className="text-gray-200 mt-4 mb-2 font-bold text-[20px]">
+            Vision
+          </p>
+          <p>
+            An engine for the Mulembe Nation's scietal and economic development.
+          </p>
+          <p id="" className="text-gray-200 mt-4 mb-2 font-bold text-[20px]">
+            Mission
+          </p>
+          <p>
+            To inculcate a profund sense of communal consciousness among the
+            Mulembe Nation and secure scioeconomic transformation
+          </p>
+          <p id="" className="text-gray-200 mt-4 mb-2 font-bold text-[20px]">
+            Objectives
+          </p>
+          <ul className="text-left p-10 list-decimal">
+            <li>
+              Enhance the Mulembe Nation Unity and identity by acknowledging and
+              leveraging their diversity as a means of promoting prosperity.
+            </li>
+            <li>
+              Consolidate and employ our numerical strength to deliver
+              socioeconomic metamorphosis
+            </li>
+            <li>
+              Facilitate scioeconomic empowerment so as to build economic
+              resilience of the Mulembe Community
+            </li>
+            <li>
+              Transforming health outcomes for individuals by facilitating the
+              coordination and harmonization of traditional medicine via the
+              standardization and institutionalization of traditional medicine
+              within the Mulembe Nation.
+            </li>
+            <li>
+              Strengthen Strategic partnerships to promote opportunities from
+              within, county governments from westerns, professional
+              associations, civil society and diaspora
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -340,15 +462,19 @@ function Home() {
         <div className="md:w-8/12 w-full flex md:flex-row flex-col space-y-10 md:space-y-0 md:justify-between items-center">
           <p>
             <a
-              href="/"
+              href="https://forms.gle/mVEBnA2S6FzX8XYR6"
+              target="_blank"
+              rel="noreferrer"
               className="w-fit px-3 py-2 rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
             >
-              REGISTER AS A DELEGATE
+              REGISTER AS A PARTICIPANT
             </a>
           </p>
           <p>
             <a
-              href="/"
+              href="https://forms.gle/XQRJ4kCnRjAoeRkRA"
+              target="_blank"
+              rel="noreferrer"
               className="w-fit px-3 py-2 rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
             >
               REGISTER AS A SPONSOR
@@ -356,7 +482,9 @@ function Home() {
           </p>
           <p>
             <a
-              href="/"
+              href="https://forms.gle/ihFciXn2sDER5pXs8"
+              target="_blank"
+              rel="noreferrer"
               className="w-fit px-3 py-2 rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
             >
               REGISTER AS AN EXHIBITOR
@@ -376,30 +504,23 @@ function Home() {
           Why should you register for the Inaugural Mulembe Nation SocioEconomic
           Summit?
         </p>
-        <p className="text-center text-[15px]">
-          COVID-19 has shaken up the business world, and Kenya is no exception.
-          But amidst the chaos, there's a silver lining: the rise of business
-          ecosystems. In the wake of the COVID-19 pandemic, it has become
-          increasingly evident that businesses must embrace the concept of
-          business ecosystems to thrive in the new normal: The pandemic
-          disrupted traditional business models, and companies that were not
-          part of a robust ecosystem have struggled to survive. However,
-          companies that were part of a strong ecosystem have been able to adapt
-          quickly and continue to serve their customers.
+        <p className="text-center text-[13px] md:text-[15px]">
+          In order to achieve socioeconomic transformation, it is imperative for
+          individuals to engage in collaborative endeavors within the realm of
+          business, thereby facilitating the sharing of resources, knowledge,
+          and skills.
         </p>
-        <p className="text-center my-4">
-          Therefore, it is crucial for businesses in Kenya to recognize the
-          importance of building and maintaining strong ecosystems. This
-          involves collaborating with other businesses, sharing resources, and
-          leveraging technology to create new opportunities for growth. It is
-          time for businesses in Kenya to take action and invest in building
-          strong ecosystems that will drive growth and create value for all
-          stakeholders.
+        <p className="text-center text-[13px] md:text-[15px] my-4">
+          Moreover, harnessing the potential of various technologies is crucial
+          to generate novel avenues for investment and expansion. Consequently,
+          it becomes vital for individuals to unite and actively participate in
+          endeavors that cultivate awareness regarding investments, as well as
+          establish robust networks that propel progress, engender value, and
+          foster regional prosperity.
         </p>
-        <p className="text-center">
-          Join us to be part of the pioneers in creating of Government
-          Recognized Business Ecosystems on 25th November 2023 in Masinde
-          Muliro.{" "}
+        <p className="text-center text-[13px] md:text-[15px]">
+          Join us to participate and learn about socioeconomic transformation on
+          the 25th, November 2023
         </p>
       </div>
       <Footer />
