@@ -16,6 +16,7 @@ import paul from "../assets/images/Paulmakokha.jpg";
 import luke from "../assets/images/Luke.jpg";
 import Audrine from "../assets/images/Audrine.jpg";
 import posta from "../assets/images/mulembeposter.jpg";
+import Partners from "../components/Partners";
 
 const CountdownTimer = ({ deadline }) => {
   const calculateTimeRemaining = () => {
@@ -79,7 +80,7 @@ function Home() {
     {
       name: "Dr Leonorah Ceceliah Mugala ",
       title: " PhD Lecturer Catholic University",
-      agenda: "In class teaching",
+      agenda: "Luhya language as an enabler of socioeconomic transformation",
       src: leonara,
     },
     {
@@ -208,27 +209,41 @@ function Home() {
           <div className="flex space-x-5">
             <BsCalendarEvent className="text-white text-xl" />
             <div>
-              <p className="text-gray-200 text-[20px]">Friday 24th</p>
+              <p className="text-gray-200 text-[20px]">Saturday 25th</p>
               <p>November, 2023</p>
             </div>
           </div>
-          {/* <div className="flex space-x-5 mt-6">
-            <SiSololearn />
+          <div className="flex space-x-5 mt-6">
+            <SiSololearn className="w-10 text-[11px]" />
             <p className="text-[12px]">
-              Venue. Masinde Muliro University of agriculture and Technology
+              Join us at GOLF Hotel Kakamega on Saturday 25th November 2023 from
+              8:00am to 5:00pm for the Mulembe Nation Socio-Economic Summit for
+              a host of discussions, exhibitions and a luncheon to unveil the
+              Mulembe Nation Agenda.
             </p>
-          </div> */}
-          <div className="flex my-6 space-x-5">
+          </div>
+          <div className="flex my-2 space-x-5">
             <p className="mt-1">
               <SiSololearn className=" text-[10px]" />
             </p>
-            <p className="text-[15px]">
-              Join us at GOLF Hotel Kakamega - On 24th we shall have Golf
-              tournament at Kakamega Sports Club.
-              {/* on Saturday 25th November 2023 from 8:00am to 5:00pm for
-              the Mulembe Nation Socio-Economic Summit for a host of
-              discussions, exhibitions and a luncheon to unveil the Mulembe
-              Nation Agenda. */}
+            <p className="text-[12px]">
+              On 24th we shall have a Golf tournament at Kakamega Sports Club.
+            </p>
+          </div>
+          <div className="flex my-2 space-x-5">
+            <p className="mt-1">
+              <SiSololearn className=" text-[10px]" />
+            </p>
+            <p className="text-[12px]">
+              Bull fighting on the 25th early morning 5-6AM at Malinya stadium
+            </p>
+          </div>
+          <div className="flex my-2 space-x-5">
+            <p className="mt-1">
+              <SiSololearn className=" text-[10px]" />
+            </p>
+            <p className="text-[12px]">
+              Rugby tournament at Kakamega Show ground on the 25th from 3PM
             </p>
           </div>
         </div>
@@ -270,9 +285,33 @@ function Home() {
               <img
                 src={require("../assets/images/lubaologo.jpeg")}
                 alt=""
-                className="rounded-full h-[3rem] w-auto shadow-md"
+                className="rounded-full h-[3.5rem] w-auto shadow-md"
               />
             </div>
+            <div>
+              <p className="text-white text-[12px] mb-4">County</p>
+              <img
+                src={require("../assets/images/partners/partner1.png")}
+                alt=""
+                className="rounded-sm h-[3.5rem] w-auto shadow-md"
+              />
+            </div>
+            <div>
+              <p className="text-white text-[12px] mb-4">I</p>
+              <img
+                src={require("../assets/images/partners/partner2.png")}
+                alt=""
+                className="rounded-sm h-[3.5rem] w-auto shadow-md"
+              />
+            </div>
+            <div>
+              <p className="text-white text-[12px] mb-4">I</p>
+              <img
+                src={require("../assets/images/partners/partner3.png")}
+                alt=""
+                className="rounded-sm h-[3.5rem] w-auto shadow-md"
+              />
+            </div>{" "}
           </div>
         </div>
       </div>
@@ -472,8 +511,8 @@ function Home() {
       </div>
 
       {/* Host and support */}
-      <div className="py-10 px-4 md:px-[10%] bg-white">
-        <div className="flex justify-between items-center">
+      <div className="py-5 px-4 md:px-[5%] bg-white">
+        <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="p-6">
             <div className="flex my-6 space-x-2">
               <p className="bg-amber-400 h-5 w-5 rounded-full"></p>
@@ -501,11 +540,71 @@ function Home() {
             <p className="text-green-700 text-[20px] font-[500]">
               Supporting Partners
             </p>
-            <div>
+            <div className="grid w-full px-2 gap-4 grid-cols-3 sm:grid-cols-4">
               <img
                 src={require("../assets/images/mulembeagenda.png")}
                 alt=""
                 className="rounded-full h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner1.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner2.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner3.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner4.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner5.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner6.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner7.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner8.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner9.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner10.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner11.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
+              />
+              <img
+                src={require("../assets/images/partners/partner12.png")}
+                alt=""
+                className="rounded-md h-[5rem] w-auto mt-5"
               />
             </div>
           </div>
@@ -520,6 +619,10 @@ function Home() {
           <p className="bg-red-700 h-5 w-5 rounded-full"></p>
         </div>
         <p className="text-[30px] font-[500] text-green-900">Sponsors</p>
+        {/* List of sponsors */}
+        <div>
+          <Partners />
+        </div>
       </div>
 
       {/* Register */}
