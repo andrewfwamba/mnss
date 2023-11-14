@@ -14,6 +14,7 @@ import wachana from "../assets/images/Kalistus.jpg";
 import wafukho from "../assets/images/ErickWafukho.jpg";
 import paul from "../assets/images/Paulmakokha.jpg";
 import luke from "../assets/images/Luke.jpg";
+import posta from "../assets/images/mulembeposter.jpg";
 
 const CountdownTimer = ({ deadline }) => {
   const calculateTimeRemaining = () => {
@@ -81,7 +82,7 @@ function Home() {
       src: shisia,
     },
     {
-      name: "Mrs. Bilha Joyce",
+      name: "Ms. Bilha Joyce",
       title: "County: Vihiga",
       agenda: "Mental health and wellbeing",
       src: bilha,
@@ -96,7 +97,7 @@ function Home() {
       name: "Mr. Calistus Wachana",
       title: "County: Bungoma",
       agenda:
-        "Climate as a forgotten factor of production:  Harnessing government change initiatives to eradicate poverty",
+        "Climate as a forgotten factor of production:  Harnessing government climate change initiatives to eradicate poverty",
       src: wachana,
     },
     {
@@ -119,14 +120,14 @@ function Home() {
     },
   ];
   return (
-    <div className="mt-[5rem] md:mt-1">
+    <div className="mt-[7rem] md:mt-1">
       <Appbar />
       <div className="bg-white/90 border z-10 border-amber-400 rounded p-1 md:p-5 fixed text-green-900 shadow-xl right-5 top-[5rem] ">
-        <p>
+        <div>
           <CountdownTimer deadline={deadline} />
-        </p>
+        </div>
       </div>
-      <div className="bg-[url('https://unsplash.com/photos/OKLqGsCT8qs/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjAzNjIzfA&force=true&w=1920')] mt-10">
+      <div className="bg-[url('https://unsplash.com/photos/OKLqGsCT8qs/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjk0MjAzNjIzfA&force=true&w=1920')] bg-cover bg-no-repeat mt-10">
         <div className="bg-white/90 px-2 md:px-36 py-4">
           <div className="mt-10 md:mt-[15%] flex  space-x-6">
             <img
@@ -151,11 +152,19 @@ function Home() {
               </p>
             </div> */}
           </div>
-          <div className="mt-8 text-green-700 text-[15px] md:text-[20px]">
+          <div className="mt-6 mb-3 text-green-700 text-[15px] md:text-[20px]">
             <p>
               CONNECTING THE MULEMBE NATION TO BUSINESS IDEAS AND OPPORTUNITIES
             </p>
           </div>
+          <a
+            className="w-fit px-3 py-2 bg-red-500 hover:bg-red-600 rounded shadow-lg mt-5 text-[13px] text-white"
+            href={posta}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View post
+          </a>
           <div className="mt-5 flex flex-col md:flex-row">
             <p className="pr-8 pl-8 md:pl-0 text-[30px] font-bold text-amber-500 border-r border-amber-700">
               Learn
@@ -172,15 +181,15 @@ function Home() {
           </div>
           <div className="relative h-[15rem] mt-5 ">
             <div className="absolute hidden md:block border top-10 border-green-600 h-32 rotate-45 w-32 p-6">
-              <div className="w-full h-full border border-amber-600"></div>
+              <div className="w-full h-full border border-black"></div>
             </div>
-            <div className="absolute border top-10 left-[30%] border-amber-600 h-32 rotate-45 w-32 p-6">
+            <div className="absolute border top-10 left-[30%] border-black h-32 rotate-45 w-32 p-6">
               <div className="w-full h-full border border-green-600"></div>
             </div>
             <div className="absolute border hidden md:block top-10 left-[55%] border-green-600 h-32 rotate-45 w-32 p-6">
-              <div className="w-full h-full border border-amber-600"></div>
+              <div className="w-full h-full border border-black"></div>
             </div>
-            <div className="absolute border top-10 hidden md:block left-[80%] border-amber-600 h-32 rotate-45 w-32 p-6">
+            <div className="absolute border top-10 hidden md:block left-[80%] border-black h-32 rotate-45 w-32 p-6">
               <div className="w-full h-full border border-green-600"></div>
             </div>
           </div>
@@ -203,10 +212,15 @@ function Home() {
             </p>
           </div> */}
           <div className="flex my-6 space-x-5">
-            <SiSololearn />
+            <p className="mt-1">
+              <SiSololearn className=" text-[10px]" />
+            </p>
             <p className="text-[15px]">
-              Masinde Muliro University of Science and Technology Summit
-              discussions, Exhibitions, and Luncheon 8am to 5 pm
+              Join us at Masinde Muliro University of Science and Technology
+              (MMUST) on Saturday 25th November 2023 from 8:00am to 5:00pm for
+              the Mulembe Nation Socio-Economic Summit for a host of
+              discussions, exhibitions and a luncheon to unveil the Mulembe
+              Nation Agenda.
             </p>
           </div>
         </div>
@@ -366,19 +380,20 @@ function Home() {
             Vision
           </p>
           <p>
-            An engine for the Mulembe Nation's scietal and economic development.
+            An engine for the Mulembe Nation's societal and economic
+            development.
           </p>
           <p id="" className="text-gray-200 mt-4 mb-2 font-bold text-[20px]">
             Mission
           </p>
           <p>
-            To inculcate a profund sense of communal consciousness among the
+            To inculcate a profound sense of communal consciousness among the
             Mulembe Nation and secure scioeconomic transformation
           </p>
-          <p id="" className="text-gray-200 mt-4 mb-2 font-bold text-[20px]">
+          <p id="" className="text-gray-200 mt-4 font-bold text-[20px]">
             Objectives
           </p>
-          <ul className="text-left p-10 list-decimal">
+          <ul className="text-left p-4 list-decimal">
             <li>
               Enhance the Mulembe Nation Unity and identity by acknowledging and
               leveraging their diversity as a means of promoting prosperity.
@@ -401,6 +416,48 @@ function Home() {
               Strengthen Strategic partnerships to promote opportunities from
               within, county governments from westerns, professional
               associations, civil society and diaspora
+            </li>
+          </ul>
+          <p id="" className="text-gray-200 mt-2 font-bold text-[20px]">
+            Values
+          </p>
+          <ul className="text-left p-4 list-decimal">
+            <li>
+              <span className="text-[18px] text-green-300 font-[500]">
+                Service -
+              </span>
+              Dedication to completing tasks on time and a commitment to
+              carrying out socioeconomic transformation duties.
+            </li>
+            <li>
+              <span className="text-[18px] text-green-300 font-[500]">
+                Integrity -
+              </span>
+              We commit to follow a solid ethical code of conduct in all acts,
+              to be fair, honest, and trustworthy.
+            </li>
+            <li>
+              <span className="text-[18px] text-green-300 font-[500]">
+                Leadership -
+              </span>
+              To set an example for others to follow in our free democratic
+              governance, and have the quality of being inspired and self
+              motivated.
+            </li>
+            <li>
+              <span className="text-[18px] text-green-300 font-[500]">
+                Innovation -
+              </span>
+              Embrace acquiring the knowledge and abilities required to develop
+              innovative goods and processes and provide first rate service to
+              the community.
+            </li>
+            <li>
+              <span className="text-[18px] text-green-300 font-[500]">
+                Teamwork -
+              </span>
+              Cooperation and the exchange of information with all stakeholders
+              in supporting one another to accomplish the mission and vision.
             </li>
           </ul>
         </div>
@@ -458,14 +515,17 @@ function Home() {
       </div>
 
       {/* Register */}
-      <div className="flex items-center p-8 bg-amber-500 justify-center">
+      <div
+        id="register"
+        className="flex items-center p-8 bg-amber-500 justify-center"
+      >
         <div className="md:w-8/12 w-full flex md:flex-row flex-col space-y-10 md:space-y-0 md:justify-between items-center">
           <p>
             <a
               href="https://forms.gle/mVEBnA2S6FzX8XYR6"
               target="_blank"
               rel="noreferrer"
-              className="w-fit px-3 py-2 rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
+              className="w-fit px-3 py-2 text-[12px] rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
             >
               REGISTER AS A PARTICIPANT
             </a>
@@ -475,7 +535,7 @@ function Home() {
               href="https://forms.gle/XQRJ4kCnRjAoeRkRA"
               target="_blank"
               rel="noreferrer"
-              className="w-fit px-3 py-2 rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
+              className="w-fit px-3 py-2 text-[12px] rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
             >
               REGISTER AS A SPONSOR
             </a>
@@ -485,7 +545,7 @@ function Home() {
               href="https://forms.gle/ihFciXn2sDER5pXs8"
               target="_blank"
               rel="noreferrer"
-              className="w-fit px-3 py-2 rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
+              className="w-fit px-3 py-2 text-[12px] rounded hover:bg-red-700  shadow-lg bg-green-600 transition transform motion-reduce:transition-none motion-reduce:hover:transform-none hover:scale-105 text-gray-100"
             >
               REGISTER AS AN EXHIBITOR
             </a>
