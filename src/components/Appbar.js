@@ -7,10 +7,7 @@ function Appbar() {
       title: "Opportunities",
       id: "opps",
     },
-    {
-      title: "Packages",
-      id: "pacs",
-    },
+
     {
       title: "The Organizer",
       id: "orgs",
@@ -18,6 +15,10 @@ function Appbar() {
     {
       title: "Sponsors",
       id: "sps",
+    },
+    {
+      title: "Register",
+      id: "register",
     },
   ];
   return (
