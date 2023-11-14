@@ -7,13 +7,14 @@ import { ImStatsDots } from "react-icons/im";
 import { FcIdea } from "react-icons/fc";
 import Footer from "../components/Footer";
 import sylvester from "../assets/images/Dr.Sylvester.jpg";
-import shisia from "../assets/images/Mrs.Shisia.jpg";
+import leonara from "../assets/images/Dr.Leonora.jpg";
 import bilha from "../assets/images/MrsBilha.jpg";
 import Kentice from "../assets/images/Kentice.jpg";
 import wachana from "../assets/images/Kalistus.jpg";
 import wafukho from "../assets/images/ErickWafukho.jpg";
 import paul from "../assets/images/Paulmakokha.jpg";
 import luke from "../assets/images/Luke.jpg";
+import Audrine from "../assets/images/Audrine.jpg";
 import posta from "../assets/images/mulembeposter.jpg";
 
 const CountdownTimer = ({ deadline }) => {
@@ -76,10 +77,10 @@ function Home() {
       src: sylvester,
     },
     {
-      name: "Mrs Julia Shisia",
-      title: "County: Busia",
-      agenda: "Demystifying insurance in Risk mitigation",
-      src: shisia,
+      name: "Dr Leonorah Ceceliah Mugala ",
+      title: " PhD Lecturer Catholic University",
+      agenda: "In class teaching",
+      src: leonara,
     },
     {
       name: "Ms. Bilha Joyce",
@@ -92,6 +93,12 @@ function Home() {
       title: "County: Kakamega",
       agenda: "Nurturing sports for business.",
       src: Kentice,
+    },
+    {
+      name: "Audrine Mikhala",
+      title: "",
+      agenda: "Opportunities in agriculture for socioeconomic transformation",
+      src: Audrine,
     },
     {
       name: "Mr. Calistus Wachana",
@@ -131,7 +138,7 @@ function Home() {
         <div className="bg-white/90 px-2 md:px-36 py-4">
           <div className="mt-10 md:mt-[15%] flex  space-x-6">
             <img
-              src={require("../assets/images/mulembelogo.jpg")}
+              src={require("../assets/images/mnsslogo.jpg")}
               alt=""
               className="rounded-lg h-[10rem]  md:h-[13rem] md:w-auto shadow-md"
             />
@@ -201,7 +208,7 @@ function Home() {
           <div className="flex space-x-5">
             <BsCalendarEvent className="text-white text-xl" />
             <div>
-              <p className="text-gray-200 text-[20px]">Saturday 25th</p>
+              <p className="text-gray-200 text-[20px]">Friday 24th</p>
               <p>November, 2023</p>
             </div>
           </div>
@@ -216,11 +223,12 @@ function Home() {
               <SiSololearn className=" text-[10px]" />
             </p>
             <p className="text-[15px]">
-              Join us at Masinde Muliro University of Science and Technology
-              (MMUST) on Saturday 25th November 2023 from 8:00am to 5:00pm for
+              Join us at GOLF Hotel Kakamega - On 24th we shall have Golf
+              tournament at Kakamega Sports Club.
+              {/* on Saturday 25th November 2023 from 8:00am to 5:00pm for
               the Mulembe Nation Socio-Economic Summit for a host of
               discussions, exhibitions and a luncheon to unveil the Mulembe
-              Nation Agenda.
+              Nation Agenda. */}
             </p>
           </div>
         </div>
