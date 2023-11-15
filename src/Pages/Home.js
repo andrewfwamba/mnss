@@ -16,6 +16,7 @@ import paul from "../assets/images/Paulmakokha.jpg";
 import luke from "../assets/images/Luke.jpg";
 import Audrine from "../assets/images/Audrine.jpg";
 import posta from "../assets/images/mulembeposter.jpg";
+import reuben from "../assets/images/ReubenKigame.jpg";
 import Partners from "../components/Partners";
 
 const CountdownTimer = ({ deadline }) => {
@@ -88,6 +89,13 @@ function Home() {
       title: "County: Vihiga",
       agenda: "Mental health and wellbeing",
       src: bilha,
+    },
+    {
+      name: "H.E. Reuben Kigame",
+      title: "Presidential Candidate 2027",
+      agenda:
+        "Honest and trustworthy leadership in the context of socioeconomic transformation",
+      src: reuben,
     },
     {
       name: "Kentice Tikolo",
