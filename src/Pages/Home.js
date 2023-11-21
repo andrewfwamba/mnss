@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Appbar from "../components/Appbar";
+import { Modal } from "antd";
 import { BsCalendarEvent, BsGraphUp } from "react-icons/bs";
 import { SiSololearn } from "react-icons/si";
 import { FaArrowsDownToPeople } from "react-icons/fa6";
@@ -8,15 +9,23 @@ import { FcIdea } from "react-icons/fc";
 import Footer from "../components/Footer";
 import sylvester from "../assets/images/Dr.Sylvester.jpg";
 import leonara from "../assets/images/Dr.Leonora.jpg";
-import bilha from "../assets/images/MrsBilha.jpg";
 import Kentice from "../assets/images/Kentice.jpg";
 import wachana from "../assets/images/Kalistus.jpg";
 import wafukho from "../assets/images/ErickWafukho.jpg";
 import paul from "../assets/images/Paulmakokha.jpg";
 import luke from "../assets/images/Luke.jpg";
 import Audrine from "../assets/images/Audrine.jpg";
-import posta from "../assets/images/mulembeposter.jpg";
+import posta from "../assets/images/mnssposta.jpg";
+import golf from "../assets/images/golfsponsored.jpg";
+import theme from "../assets/images/themeposta.jpg";
 import reuben from "../assets/images/ReubenKigame.jpg";
+import sindani from "../assets/images/barasasindani.jpg";
+import sunguti from "../assets/images/sunguti.jpg";
+import pam from "../assets/images/pamingara.jpg";
+import faith from "../assets/images/faithayuma.jpg";
+import justus from "../assets/images/wabuyao.jpg";
+import judith from "../assets/images/judithmuseve.jpg";
+import manyasi from "../assets/images/manyasi.jpg";
 import Partners from "../components/Partners";
 
 const CountdownTimer = ({ deadline }) => {
@@ -69,69 +78,112 @@ const CountdownTimer = ({ deadline }) => {
 };
 
 function Home() {
+  const [postaModal, setPostaModal] = useState(false);
   // Set deadline date here (year, month - 1, day, hours, minutes, seconds)
   const deadline = new Date(2023, 10, 25, 23, 59, 59);
   const speakers = [
     {
+      name: "Hon. Caleb Sunguti,",
+      title: "Chairperson Mulembe Nation Agenda",
+      agenda: "",
+      src: sunguti,
+    },
+    {
+      name: "Mr Francis Barasa Sindani",
+      title:
+        "Title: Mulembe Nation Agenda digital director - Professional in Communication, design and publishing",
+      agenda: "",
+      src: sindani,
+    },
+    {
+      name: "Mrs. Pam Ingara",
+      title: "Mulembe Nation Agenda strategist",
+      agenda: "",
+      src: pam,
+    },
+    {
       name: "Dr. Sylvester Anami",
       title: "",
-      agenda: "Mulembe Nation Socioeconomic transformation Theory of Change",
+      agenda:
+        "Title: Mulembe Nation Socioeconomic transformation Theory of Change",
       src: sylvester,
     },
     {
       name: "Dr Leonorah Ceceliah Mugala ",
       title: " PhD Lecturer Catholic University",
-      agenda: "Luhya language as an enabler of socioeconomic transformation",
+      agenda:
+        "Title: Luhya language as an enabler of socioeconomic transformation",
       src: leonara,
     },
     {
-      name: "Ms. Bilha Joyce",
-      title: "County: Vihiga",
-      agenda: "Mental health and wellbeing",
-      src: bilha,
+      name: "Mrs Faith Ayuma",
+      title: "",
+      agenda:
+        "Title: The battle in Redeeming sports arts and culture in the mulembe Nation",
+      src: faith,
+    },
+    {
+      name: "Dr. Judith Museve",
+      title: "",
+      agenda: "Title: Mental health and wellbeing",
+      src: judith,
     },
     {
       name: "H.E. Reuben Kigame",
       title: "Presidential Candidate 2027",
       agenda:
-        "Honest and trustworthy leadership in the context of socioeconomic transformation",
+        "Title: Honest and trustworthy leadership in the context of socioeconomic transformation",
       src: reuben,
     },
     {
       name: "Kentice Tikolo",
       title: "County: Kakamega",
-      agenda: "Nurturing sports for business.",
+      agenda: "Title: Nurturing sports for business.",
       src: Kentice,
+    },
+    {
+      name: "Mr. Justus Wabuyao",
+      title: "",
+      agenda: "Title: Key note Speaker, CEO, NuPEA",
+      src: justus,
+    },
+    {
+      name: "Mr. Baridi Manyasi",
+      title: "",
+      agenda:
+        "Title: Mulembe Nation Counties involvement in Developing seed money for Community Growth.",
+      src: manyasi,
     },
     {
       name: "Audrine Mikhala",
       title: "",
-      agenda: "Opportunities in agriculture for socioeconomic transformation",
+      agenda:
+        "Title: Opportunities in agriculture for socioeconomic transformation",
       src: Audrine,
     },
     {
       name: "Mr. Calistus Wachana",
       title: "County: Bungoma",
       agenda:
-        "Climate as a forgotten factor of production:  Harnessing government climate change initiatives to eradicate poverty",
+        "Title: Climate as a forgotten factor of production:  Harnessing government climate change initiatives to eradicate poverty",
       src: wachana,
     },
     {
       name: "Mr. Erick Wafukho.",
       title: "County: Trans-Nzoia",
-      agenda: "Strategic Mulembe Community Collaborations",
+      agenda: "Title: Strategic Mulembe Community Collaborations",
       src: wafukho,
     },
     {
       name: "Mr. Paul Makokha.",
       title: "County: Kakamega",
-      agenda: "Business and the Law",
+      agenda: "Title: Business and the Law",
       src: paul,
     },
     {
       name: "Mr. Luke Shikanga.",
       title: "County: Kakamega",
-      agenda: "Culture as an economic asset",
+      agenda: "Title: Culture as an economic asset",
       src: luke,
     },
   ];
@@ -173,14 +225,15 @@ function Home() {
               CONNECTING THE MULEMBE NATION TO BUSINESS IDEAS AND OPPORTUNITIES
             </p>
           </div>
-          <a
-            className="w-fit px-3 py-2 bg-red-500 hover:bg-red-600 rounded shadow-lg mt-5 text-[13px] text-white"
+          <p
+            onClick={() => setPostaModal(!postaModal)}
+            className="w-fit px-3 py-2 bg-green-500 cursor-pointer hover:bg-green-600 border border-amber-400 rounded shadow-lg mt-5 text-[13px] text-white"
             href={posta}
             target="_blank"
             rel="noreferrer"
           >
-            View post
-          </a>
+            View Banners
+          </p>
           <div className="mt-5 flex flex-col md:flex-row">
             <p className="pr-8 pl-8 md:pl-0 text-[30px] font-bold text-amber-500 border-r border-amber-700">
               Learn
@@ -356,7 +409,7 @@ function Home() {
                 </p>
                 <p className="text-green-400 text-[12px]">{speaker.title}</p>
                 <p className="text-gray-500 text-[12px] font-medium">
-                  Title: {speaker.agenda}
+                  {speaker.agenda}
                 </p>
               </div>
             </div>
@@ -703,6 +756,39 @@ function Home() {
         </p>
       </div>
       <Footer />
+      <Modal
+        open={postaModal}
+        onCancel={() => setPostaModal(false)}
+        width={"95%"}
+        footer={null}
+      >
+        <div className="">
+          <p className="text-green-700 w-fit px-3 py-1 rounded-l border-b border-l border-green-600 shadow-lg shadow-b shadow-l shadow-green-400/20">
+            View Banners
+          </p>
+          <div className="mt-8 grid md:grid-cols-2 gap-2">
+            <div className="mx-auto w-[98%] md:w-[95%] h-auto border border-green-500 rounded overflow-hidden p-4">
+              <p className="border-b border-green-300 py-1 mb-2">
+                The 1st Mulembe Nation SocioEconomic Summit
+              </p>
+              <img src={posta} alt="" />
+            </div>
+            <div className="mx-auto w-[98%] md:w-[95%] h-auto border border-green-500 rounded overflow-hidden p-4">
+              <p className="border-b border-green-300 py-1 mb-2">
+                Golf Tournament on 24th at Kakamega Golf Club
+              </p>
+              <img src={golf} alt="" />
+            </div>
+            <div className="mx-auto w-[98%] h-auto md:col-span-2 border border-green-500 rounded overflow-hidden p-4">
+              <p className="border-b border-green-300 py-1 mb-2">
+                Inaugural Mulembe Nation SocioEconomic Summit{" "}
+                <span className="text-[12px] italic">- Learn and have fun</span>
+              </p>
+              <img src={theme} alt="" />
+            </div>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }
