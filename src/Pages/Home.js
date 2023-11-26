@@ -54,7 +54,24 @@ const CountdownTimer = ({ deadline }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeRemaining(calculateTimeRemaining());
+      setTimeRemaining((prevTimeRemaining) => {
+        const updatedTimeRemaining = calculateTimeRemaining();
+        if (
+          updatedTimeRemaining.daysRemaining <= 0 &&
+          updatedTimeRemaining.hoursRemaining <= 0 &&
+          updatedTimeRemaining.minutesRemaining <= 0 &&
+          updatedTimeRemaining.secondsRemaining <= 0
+        ) {
+          clearInterval(interval);
+          return {
+            daysRemaining: 0,
+            hoursRemaining: 0,
+            minutesRemaining: 0,
+            secondsRemaining: 0,
+          };
+        }
+        return updatedTimeRemaining;
+      });
     }, 1000);
 
     return () => {
