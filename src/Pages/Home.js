@@ -33,14 +33,22 @@ const CountdownTimer = ({ deadline }) => {
     const currentTime = new Date();
     const timeDifference = deadline - currentTime;
 
-    const daysRemaining = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hoursRemaining = Math.floor(
-      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    const daysRemaining = Math.max(
+      0,
+      Math.floor(timeDifference / (1000 * 60 * 60 * 24))
     );
-    const minutesRemaining = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    const hoursRemaining = Math.max(
+      0,
+      Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
     );
-    const secondsRemaining = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    const minutesRemaining = Math.max(
+      0,
+      Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60))
+    );
+    const secondsRemaining = Math.max(
+      0,
+      Math.floor((timeDifference % (1000 * 60)) / 1000)
+    );
 
     return {
       daysRemaining,
@@ -54,24 +62,23 @@ const CountdownTimer = ({ deadline }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTimeRemaining((prevTimeRemaining) => {
-        const updatedTimeRemaining = calculateTimeRemaining();
-        if (
-          updatedTimeRemaining.daysRemaining <= 0 &&
-          updatedTimeRemaining.hoursRemaining <= 0 &&
-          updatedTimeRemaining.minutesRemaining <= 0 &&
-          updatedTimeRemaining.secondsRemaining <= 0
-        ) {
-          clearInterval(interval);
-          return {
-            daysRemaining: 0,
-            hoursRemaining: 0,
-            minutesRemaining: 0,
-            secondsRemaining: 0,
-          };
-        }
-        return updatedTimeRemaining;
-      });
+      const updatedTimeRemaining = calculateTimeRemaining();
+      setTimeRemaining(updatedTimeRemaining);
+
+      if (
+        updatedTimeRemaining.daysRemaining <= 0 &&
+        updatedTimeRemaining.hoursRemaining <= 0 &&
+        updatedTimeRemaining.minutesRemaining <= 0 &&
+        updatedTimeRemaining.secondsRemaining <= 0
+      ) {
+        clearInterval(interval);
+        setTimeRemaining({
+          daysRemaining: 0,
+          hoursRemaining: 0,
+          minutesRemaining: 0,
+          secondsRemaining: 0,
+        });
+      }
     }, 1000);
 
     return () => {
