@@ -16,6 +16,7 @@ import paul from "../assets/images/Paulmakokha.jpg";
 import luke from "../assets/images/Luke.jpg";
 import Audrine from "../assets/images/Audrine.jpg";
 import posta from "../assets/images/mnssposta.jpg";
+import newposta from "../assets/images/vihigamnssposter.jpg";
 import golf from "../assets/images/golfsponsored.jpg";
 import theme from "../assets/images/themeposta.jpg";
 import reuben from "../assets/images/ReubenKigame.jpg";
@@ -104,7 +105,7 @@ const CountdownTimer = ({ deadline }) => {
 function Home() {
   const [postaModal, setPostaModal] = useState(false);
   // Set deadline date here (year, month - 1, day, hours, minutes, seconds)
-  const deadline = new Date(2023, 10, 25, 23, 59, 59);
+  const deadline = new Date(2024, 5, 29, 23, 59, 59);
   const speakers = [
     {
       name: "Hon. Caleb Sunguti,",
@@ -246,7 +247,8 @@ function Home() {
           </div>
           <div className="mt-6 mb-3 text-green-700 text-[15px] md:text-[20px]">
             <p>
-              CONNECTING THE MULEMBE NATION TO BUSINESS IDEAS AND OPPORTUNITIES
+              REALIGNING UNITY OF PURPOSE TO CONFRONT RESURGENT SOCIO-ECONOMIC
+              CHALLENGES
             </p>
           </div>
           <p
@@ -294,17 +296,18 @@ function Home() {
           <div className="flex space-x-5">
             <BsCalendarEvent className="text-white text-xl" />
             <div>
-              <p className="text-gray-200 text-[20px]">Saturday 25th</p>
-              <p>November, 2023</p>
+              <p className="text-gray-200 text-[20px]">Saturday 29th</p>
+              <p>June, 2024</p>
             </div>
           </div>
-          <div className="flex space-x-5 mt-6">
-            <SiSololearn className="w-10 text-[11px]" />
+          <div className="flex justify-start items-start space-x-5 mt-6">
+            <SiSololearn className="w- text-[11px]" />
             <p className="text-[12px]">
-              Join us at GOLF Hotel Kakamega on Saturday 25th November 2023 from
+              {/* Join us at GOLF Hotel Kakamega on Saturday 25th November 2023 from
               8:00am to 5:00pm for the Mulembe Nation Socio-Economic Summit for
               a host of discussions, exhibitions and a luncheon to unveil the
-              Mulembe Nation Agenda.
+              Mulembe Nation Agenda. */}
+              Venue to be communicated
             </p>
           </div>
           <div className="flex my-2 space-x-5">
@@ -312,7 +315,8 @@ function Home() {
               <SiSololearn className=" text-[10px]" />
             </p>
             <p className="text-[12px]">
-              On 24th we shall have a Golf tournament at Kakamega Sports Club.
+              {/* On 24th we shall have a Golf tournament at Kakamega Sports Club. */}
+              Activities to be communicated
             </p>
           </div>
           <div className="flex my-2 space-x-5">
@@ -320,7 +324,7 @@ function Home() {
               <SiSololearn className=" text-[10px]" />
             </p>
             <p className="text-[12px]">
-              Bull fighting on the 25th early morning 5-6AM at Malinya stadium
+              {/* Bull fighting on the 25th early morning 5-6AM at Malinya stadium */}
             </p>
           </div>
           <div className="flex my-2 space-x-5">
@@ -328,7 +332,7 @@ function Home() {
               <SiSololearn className=" text-[10px]" />
             </p>
             <p className="text-[12px]">
-              Rugby tournament at Kakamega Show ground on the 25th from 3PM
+              {/* Rugby tournament at Kakamega Show ground on the 25th from 3PM */}
             </p>
           </div>
         </div>
@@ -785,30 +789,31 @@ function Home() {
         onCancel={() => setPostaModal(false)}
         width={"95%"}
         footer={null}
+        title=""
       >
         <div className="">
           <p className="text-green-700 w-fit px-3 py-1 rounded-l border-b border-l border-green-600 shadow-lg shadow-b shadow-l shadow-green-400/20">
-            View Banners
+            The 2nd Mulembe Nation SocioEconomic Summit
           </p>
           <div className="mt-8 grid md:grid-cols-2 gap-2">
-            <div className="mx-auto w-[98%] md:w-[95%] h-auto border border-green-500 rounded overflow-hidden p-4">
+            {/* <div className="mx-auto w-[98%] md:w-[95%] h-auto border border-green-500 rounded overflow-hidden p-4">
               <p className="border-b border-green-300 py-1 mb-2">
-                The 1st Mulembe Nation SocioEconomic Summit
+                The 2nd Mulembe Nation SocioEconomic Summit
               </p>
-              <img src={posta} alt="" />
+              <img src={newposta} alt="" />
             </div>
             <div className="mx-auto w-[98%] md:w-[95%] h-auto border border-green-500 rounded overflow-hidden p-4">
               <p className="border-b border-green-300 py-1 mb-2">
                 Golf Tournament on 24th at Kakamega Golf Club
               </p>
               <img src={golf} alt="" />
-            </div>
+            </div> */}
             <div className="mx-auto w-[98%] h-auto md:col-span-2 border border-green-500 rounded overflow-hidden p-4">
               <p className="border-b border-green-300 py-1 mb-2">
                 Inaugural Mulembe Nation SocioEconomic Summit{" "}
                 <span className="text-[12px] italic">- Learn and have fun</span>
               </p>
-              <img src={theme} alt="" />
+              <img src={newposta} alt="" />
             </div>
           </div>
         </div>
