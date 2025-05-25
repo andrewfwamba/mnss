@@ -107,110 +107,110 @@ function Home() {
   // Set deadline date here (year, month - 1, day, hours, minutes, seconds)
   const deadline = new Date(2024, 5, 29, 23, 59, 59);
   const speakers = [
-    {
-      name: "Hon. Caleb Sunguti,",
-      title: "Chairperson Mulembe Nation Agenda",
-      agenda: "",
-      src: sunguti,
-    },
-    {
-      name: "Mr Francis Barasa Sindani",
-      title:
-        "Title: Mulembe Nation Agenda digital director - Professional in Communication, design and publishing",
-      agenda: "",
-      src: sindani,
-    },
-    {
-      name: "Mrs. Pam Ingara",
-      title: "Mulembe Nation Agenda strategist",
-      agenda: "",
-      src: pam,
-    },
-    {
-      name: "Dr. Sylvester Anami",
-      title: "",
-      agenda:
-        "Title: Mulembe Nation Socioeconomic transformation Theory of Change",
-      src: sylvester,
-    },
-    {
-      name: "Dr Leonorah Ceceliah Mugala ",
-      title: " PhD Lecturer Catholic University",
-      agenda:
-        "Title: Luhya language as an enabler of socioeconomic transformation",
-      src: leonara,
-    },
-    {
-      name: "Mrs Faith Ayuma",
-      title: "",
-      agenda:
-        "Title: The battle in Redeeming sports arts and culture in the mulembe Nation",
-      src: faith,
-    },
-    {
-      name: "Dr. Judith Museve",
-      title: "",
-      agenda: "Title: Mental health and wellbeing",
-      src: judith,
-    },
-    {
-      name: "H.E. Reuben Kigame",
-      title: "Presidential Candidate 2027",
-      agenda:
-        "Title: Honest and trustworthy leadership in the context of socioeconomic transformation",
-      src: reuben,
-    },
-    {
-      name: "Kentice Tikolo",
-      title: "County: Kakamega",
-      agenda: "Title: Nurturing sports for business.",
-      src: Kentice,
-    },
-    {
-      name: "Mr. Justus Wabuyao",
-      title: "",
-      agenda: "Title: Key note Speaker, CEO, NuPEA",
-      src: justus,
-    },
-    {
-      name: "Mr. Baridi Manyasi",
-      title: "",
-      agenda:
-        "Title: Mulembe Nation Counties involvement in Developing seed money for Community Growth.",
-      src: manyasi,
-    },
-    {
-      name: "Audrine Mikhala",
-      title: "",
-      agenda:
-        "Title: Opportunities in agriculture for socioeconomic transformation",
-      src: Audrine,
-    },
-    {
-      name: "Mr. Calistus Wachana",
-      title: "County: Bungoma",
-      agenda:
-        "Title: Climate as a forgotten factor of production:  Harnessing government climate change initiatives to eradicate poverty",
-      src: wachana,
-    },
-    {
-      name: "Mr. Erick Wafukho.",
-      title: "County: Trans-Nzoia",
-      agenda: "Title: Strategic Mulembe Community Collaborations",
-      src: wafukho,
-    },
-    {
-      name: "Mr. Paul Makokha.",
-      title: "County: Kakamega",
-      agenda: "Title: Business and the Law",
-      src: paul,
-    },
-    {
-      name: "Mr. Luke Shikanga.",
-      title: "County: Kakamega",
-      agenda: "Title: Culture as an economic asset",
-      src: luke,
-    },
+    // {
+    //   name: "Hon. Caleb Sunguti,",
+    //   title: "Chairperson Mulembe Nation Agenda",
+    //   agenda: "",
+    //   src: sunguti,
+    // },
+    // {
+    //   name: "Mr Francis Barasa Sindani",
+    //   title:
+    //     "Title: Mulembe Nation Agenda digital director - Professional in Communication, design and publishing",
+    //   agenda: "",
+    //   src: sindani,
+    // },
+    // {
+    //   name: "Mrs. Pam Ingara",
+    //   title: "Mulembe Nation Agenda strategist",
+    //   agenda: "",
+    //   src: pam,
+    // },
+    // {
+    //   name: "Dr. Sylvester Anami",
+    //   title: "",
+    //   agenda:
+    //     "Title: Mulembe Nation Socioeconomic transformation Theory of Change",
+    //   src: sylvester,
+    // },
+    // {
+    //   name: "Dr Leonorah Ceceliah Mugala ",
+    //   title: " PhD Lecturer Catholic University",
+    //   agenda:
+    //     "Title: Luhya language as an enabler of socioeconomic transformation",
+    //   src: leonara,
+    // },
+    // {
+    //   name: "Mrs Faith Ayuma",
+    //   title: "",
+    //   agenda:
+    //     "Title: The battle in Redeeming sports arts and culture in the mulembe Nation",
+    //   src: faith,
+    // },
+    // {
+    //   name: "Dr. Judith Museve",
+    //   title: "",
+    //   agenda: "Title: Mental health and wellbeing",
+    //   src: judith,
+    // },
+    // {
+    //   name: "H.E. Reuben Kigame",
+    //   title: "Presidential Candidate 2027",
+    //   agenda:
+    //     "Title: Honest and trustworthy leadership in the context of socioeconomic transformation",
+    //   src: reuben,
+    // },
+    // {
+    //   name: "Kentice Tikolo",
+    //   title: "County: Kakamega",
+    //   agenda: "Title: Nurturing sports for business.",
+    //   src: Kentice,
+    // },
+    // {
+    //   name: "Mr. Justus Wabuyao",
+    //   title: "",
+    //   agenda: "Title: Key note Speaker, CEO, NuPEA",
+    //   src: justus,
+    // },
+    // {
+    //   name: "Mr. Baridi Manyasi",
+    //   title: "",
+    //   agenda:
+    //     "Title: Mulembe Nation Counties involvement in Developing seed money for Community Growth.",
+    //   src: manyasi,
+    // },
+    // {
+    //   name: "Audrine Mikhala",
+    //   title: "",
+    //   agenda:
+    //     "Title: Opportunities in agriculture for socioeconomic transformation",
+    //   src: Audrine,
+    // },
+    // {
+    //   name: "Mr. Calistus Wachana",
+    //   title: "County: Bungoma",
+    //   agenda:
+    //     "Title: Climate as a forgotten factor of production:  Harnessing government climate change initiatives to eradicate poverty",
+    //   src: wachana,
+    // },
+    // {
+    //   name: "Mr. Erick Wafukho.",
+    //   title: "County: Trans-Nzoia",
+    //   agenda: "Title: Strategic Mulembe Community Collaborations",
+    //   src: wafukho,
+    // },
+    // {
+    //   name: "Mr. Paul Makokha.",
+    //   title: "County: Kakamega",
+    //   agenda: "Title: Business and the Law",
+    //   src: paul,
+    // },
+    // {
+    //   name: "Mr. Luke Shikanga.",
+    //   title: "County: Kakamega",
+    //   agenda: "Title: Culture as an economic asset",
+    //   src: luke,
+    // },
   ];
   return (
     <div className="mt-[7rem] md:mt-1">
@@ -428,7 +428,7 @@ function Home() {
               key={index}
               className="border-green-300 border rounded shadow-xl shadow-green-200 p-2"
             >
-              <div className="p-2 flex rounded-lg bg-green-400 shadow-xl">
+              {/* <div className="p-2 flex rounded-lg bg-green-400 shadow-xl">
                 <img src={speaker.src} alt="" className="w-[100%] rounded" />
               </div>
               <div>
@@ -439,7 +439,7 @@ function Home() {
                 <p className="text-gray-500 text-[12px] font-medium">
                   {speaker.agenda}
                 </p>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
